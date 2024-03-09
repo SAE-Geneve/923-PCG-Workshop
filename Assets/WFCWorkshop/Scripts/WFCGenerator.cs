@@ -15,7 +15,6 @@ namespace WFCWorkshop
         [Header("Analyse")]
         [SerializeField] private Tilemap _model;
         [SerializeField] private string _rulesPath = "RulesGenerated" ;
-        [SerializeField] private WFCModule _module;
         [SerializeField] private WFCModuleSet _generatedModuleSet;
         
         [Header("Generation")]
