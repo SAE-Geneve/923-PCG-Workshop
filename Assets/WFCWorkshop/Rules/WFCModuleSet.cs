@@ -16,6 +16,22 @@ namespace WFCWorkshop
         public List<WFCModule> Modules;
 
         List<TileBase> _tileset = new List<TileBase>();
+
+        // Static method
+        public static string CreateSelfFolder(string rulesPath)
+        {
+            if (!AssetDatabase.IsValidFolder("Assets/WFCWorkshop/" + rulesPath))
+            {
+                string guid = AssetDatabase.CreateFolder("Assets/WFCWorkshop", rulesPath);    
+                return AssetDatabase.GUIDToAssetPath(guid);
+            }
+            else
+            {
+                return "Assets/WFCWorkshop/" + rulesPath;                
+            }
+            
+            
+        }
         
         public void ResetTileset()
         {

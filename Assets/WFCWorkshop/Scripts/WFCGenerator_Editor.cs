@@ -15,6 +15,10 @@ namespace WFCWorkshop
 
             WFCGenerator generator = (WFCGenerator)target;
 
+            if (GUILayout.Button("Analyze"))
+            {
+                generator.Analyse();
+            }
             if (GUILayout.Button("Initiate"))
             {
                 generator.Initiate();
