@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e93c04e0178fcc468ab0813f57b9752, type: 3}
+  m_Name: _KnotsModuleSet
+  m_EditorClassIdentifier: 
+  _modules:
+  - {fileID: 11400000, guid: df127bbbe970f6c488f605fe504737d6, type: 2}
+  - {fileID: 11400000, guid: bd0048e495aa8d74daac14d88ab1b9c6, type: 2}
+  - {fileID: 11400000, guid: 455d35a819dc12a44bcea3ecabe47f60, type: 2}
+  - {fileID: 11400000, guid: a6d12dd3eb8a4e4408ebc195babeefd4, type: 2}
+  - {fileID: 11400000, guid: 3ce5327c566a6524dbe2fa0be52bbedc, type: 2}
+  - {fileID: 11400000, guid: 252f58a9856cbf740a22e0fae0a2b0e5, type: 2}
+  - {fileID: 11400000, guid: 6cf7aa507a1baad4887b2146442fa4b7, type: 2}
+  - {fileID: 11400000, guid: e587d1a481c42414096e78dc720b56db, type: 2}
+  - {fileID: 11400000, guid: 1a39a5b17ff9aa3448b47b239aacff6b, type: 2}
+  - {fileID: 11400000, guid: e4c77517cabcc7a4a852108b3d6ab263, type: 2}
+  - {fileID: 11400000, guid: d686145a856e8f640be012b58fcb7f43, type: 2}
+  - {fileID: 11400000, guid: 9f2037df426ca19429039daac9a10407, type: 2}
