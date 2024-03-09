@@ -15,5 +15,4 @@ MonoBehaviour:
   Tile: {fileID: 11400000, guid: 52db1e4b9c1c0b9439112ff84ffafd49, type: 2}
   Neighbours:
   - {fileID: 11400000, guid: 52db1e4b9c1c0b9439112ff84ffafd49, type: 2}
-  - {fileID: 11400000, guid: 4900c056e3516784497fd850d066c091, type: 2}
   - {fileID: 11400000, guid: 96d123e14d66e464b92e1b2fbb4f15a0, type: 2}
