@@ -20,6 +20,14 @@ namespace WFCWorkshop
         public float Entropy => _entropy;
         public List<TileBase> Domain => _domain;
         
+        public static Vector3Int[] Directions =
+        {
+            Vector3Int.up,
+            Vector3Int.right,
+            Vector3Int.down,
+            Vector3Int.left
+        };
+        
         public TileBase Tile
         {
             get
