@@ -19,14 +19,8 @@ namespace WFCWorkshop
         [SerializeField] private WFCModuleSet _moduleSet;
 
         private List<WFCSlot> _slots = new List<WFCSlot>();
-        
-        private static Vector3Int[] _directions =
-        {
-            Vector3Int.up,
-            Vector3Int.right,
-            Vector3Int.down,
-            Vector3Int.left
-        };
+
+
 
         private void Start()
         {
@@ -39,6 +33,8 @@ namespace WFCWorkshop
             if (!Step())
                 Initiate();
         }
+
+        
 
         public void Initiate()
         {
@@ -106,7 +102,7 @@ namespace WFCWorkshop
                 WFCSlot propagatedSlot = slotsStack.Pop();
                 visitedSlots.Add(propagatedSlot);
 
-                foreach (Vector3Int direction in _directions)
+                foreach (Vector3Int direction in WFCSlot.Directions)
                 {
                     var newSlot = _slots.FirstOrDefault(s => s.Position == direction + propagatedSlot.Position);
                     if (newSlot != null && !visitedSlots.Contains(newSlot))
@@ -119,13 +115,13 @@ namespace WFCWorkshop
                             slotsStack.Push(newSlot);
                         }
 
-                        if (propagatedSlot.Entropy == 0)
+                        if (newSlot.Entropy == 0)
                         {
                             // Collapsed
                             Debug.Log("collapsed tile");
-                            _map.SetTile(propagatedSlot.Position, propagatedSlot.Tile);
+                            _map.SetTile(newSlot.Position, newSlot.Tile);
                         }
-                        if (propagatedSlot.Entropy == -1)
+                        if (newSlot.Entropy == -1)
                         {
                             // Regenerate ----------------------------------
                             return false;

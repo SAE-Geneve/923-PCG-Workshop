@@ -14,7 +14,7 @@ namespace WFCWorkshop
             base.OnInspectorGUI();
 
             WFCGenerator generator = (WFCGenerator)target;
-
+            
             if (GUILayout.Button("Initiate"))
             {
                 generator.Initiate();
