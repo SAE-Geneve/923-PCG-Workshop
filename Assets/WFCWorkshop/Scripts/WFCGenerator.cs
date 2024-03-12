@@ -115,13 +115,13 @@ namespace WFCWorkshop
                             slotsStack.Push(newSlot);
                         }
 
-                        if (propagatedSlot.Entropy == 0)
+                        if (newSlot.Entropy == 0)
                         {
                             // Collapsed
                             Debug.Log("collapsed tile");
-                            _map.SetTile(propagatedSlot.Position, propagatedSlot.Tile);
+                            _map.SetTile(newSlot.Position, newSlot.Tile);
                         }
-                        if (propagatedSlot.Entropy == -1)
+                        if (newSlot.Entropy == -1)
                         {
                             // Regenerate ----------------------------------
                             return false;

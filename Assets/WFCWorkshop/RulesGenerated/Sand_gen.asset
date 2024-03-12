@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4cff6d70ed7ec4d94dffc23f4f9094, type: 3}
-  m_Name: Sea2
+  m_Name: Sand_gen
   m_EditorClassIdentifier: 
-  Tile: {fileID: 11400000, guid: 52db1e4b9c1c0b9439112ff84ffafd49, type: 2}
+  Tile: {fileID: 0}
   Neighbours:
-  - {fileID: 11400000, guid: 52db1e4b9c1c0b9439112ff84ffafd49, type: 2}
   - {fileID: 11400000, guid: 96d123e14d66e464b92e1b2fbb4f15a0, type: 2}

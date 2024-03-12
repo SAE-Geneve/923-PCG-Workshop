@@ -1,20 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="62d7f26b-c8ad-4877-aa2a-c46929cbeae3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCRulesAnalyzer_Editor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCRulesAnalyzer_Editor.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.923-PCG-Workshop/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.923-PCG-Workshop/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.923-PCG-Workshop/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.923-PCG-Workshop/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/Rules/WFCModuleSet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WFCWorkshop/Rules/WFCModuleSet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/RulesGenerated/Ground2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/RulesGenerated/Ground2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/RulesGenerated/GroundSand2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/RulesGenerated/GroundSand2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/RulesGenerated/Sand2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/RulesGenerated/Sand2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/RulesGenerated/Sea2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/RulesGenerated/Sea2.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCGenerator_Editor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCGenerator_Editor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCRulesAnalyzer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCRulesAnalyzer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/WFCWorkshop/WFCWorkshop.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/WFCWorkshop/WFCWorkshop.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2023.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2023.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3195587d1594409486322070a67e356b1dea00/59/c7960d14/IMGUIContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/551f32857f194d049b414172a31861af954400/95/22d1d4af/InspectorElement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7d7dd707cbb344faa8dd6be1244b58edc200/8d/5dd77944/Tilemap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c906070d03bb41e18ccbe464fa4fb9da67c00/ed/9073197f/DefaultEditorWindowBackend.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,25 +44,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\accou\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\accou\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\accou\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\accou\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\accou\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\accou\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\0_Installs\Unity\2023.2.0f1\Editor\Unity.exe" />
@@ -95,7 +111,7 @@
       <updated>1709990791939</updated>
       <workItem from="1709990793475" duration="219000" />
       <workItem from="1710243954702" duration="63000" />
-      <workItem from="1710244044495" duration="323000" />
+      <workItem from="1710244044495" duration="5687000" />
     </task>
     <servers />
   </component>
@@ -106,5 +122,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/WFCWorkshop/Scripts/WFCGenerator.cs</url>
+          <line>65</line>
+          <properties documentPath="D:\5_Repos\Unity\TrashProjects\923-PCG-Workshop\Assets\WFCWorkshop\Scripts\WFCGenerator.cs" initialLine="65" containingFunctionPresentation="Method 'Step'">
+            <startOffsets>
+              <option value="1546" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1577" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

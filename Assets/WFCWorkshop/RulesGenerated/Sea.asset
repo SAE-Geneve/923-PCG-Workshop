@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a4cff6d70ed7ec4d94dffc23f4f9094, type: 3}
-  m_Name: Ground2
+  m_Name: Sea
   m_EditorClassIdentifier: 
-  Tile: {fileID: 11400000, guid: 4900c056e3516784497fd850d066c091, type: 2}
-  Neighbours:
-  - {fileID: 11400000, guid: 4900c056e3516784497fd850d066c091, type: 2}
-  - {fileID: 11400000, guid: b9afefa7bc4f9764e9e73d5b54e1c3cd, type: 2}
+  Tile: {fileID: 0}
+  Neighbours: []
