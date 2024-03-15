@@ -72,10 +72,16 @@ namespace WFCWorkshop
 
         public void Clear()
         {
+            // Clear files
             foreach (WFCModule wfcModule in Modules)
             {
-                AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(wfcModule));
+                string assetPath = AssetDatabase.GetAssetPath(wfcModule);
+                if(File.Exists(assetPath))
+                {
+                    AssetDatabase.DeleteAsset(assetPath);
+                }
             }
+            // Clear list
             Modules.Clear();
             
         }
