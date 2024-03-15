@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,23 +11,14 @@ namespace WFCWorkshop
     {
 
         private List<TileBase> _domain;
-        private float _entropy;
         private Vector3Int _position;
         private TileBase _tile;
         private TileBase _unknown;
 
         public Vector3Int Position => _position;
-        public float Entropy => _entropy;
+        public float Entropy => (_domain.Count - 1);
         public List<TileBase> Domain => _domain;
-        
-        public static Vector3Int[] Directions =
-        {
-            Vector3Int.up,
-            Vector3Int.right,
-            Vector3Int.down,
-            Vector3Int.left
-        };
-        
+
         public TileBase Tile
         {
             get
@@ -35,14 +26,14 @@ namespace WFCWorkshop
                 if (_domain.Count == 1)
                 {
                     // Solved slot
-                    return _domain[0];    
+                    return _domain[0];
                 }
                 else
                 {
                     // unsolved slot
                     return _unknown;
                 }
-                
+
             }
         }
 
@@ -50,8 +41,6 @@ namespace WFCWorkshop
         {
             _position = pos;
             _domain = new List<TileBase>(startingDomain);
-
-            _entropy = _domain.Count - 1;
             _unknown = unknownTile;
         }
 
@@ -60,8 +49,6 @@ namespace WFCWorkshop
             TileBase collapsedTile = _domain[Random.Range(0, _domain.Count)];
             _domain.Clear();
             _domain.Add(collapsedTile);
-            
-            _entropy = 0;
         }
 
         public bool SetNewDomain(List<TileBase> propagatedSlotDomain)
@@ -70,17 +57,33 @@ namespace WFCWorkshop
 
             if (newDomain.Count <= 0)
             {
-                Debug.LogWarning("Domains not constitent !");
+                string alertStr = _position + " : Domains not constitent !";
+
+                foreach (TileBase tileBase in propagatedSlotDomain)
+                {
+                    alertStr += "\nPropagated domain : " + tileBase.name;
+                }
+                foreach (TileBase tileBase in _domain)
+                {
+                    alertStr += "\nExisting domain   : " + tileBase.name;
+                }
+                foreach (TileBase tileBase in newDomain)
+                {
+                    alertStr += "\n===> New  domain  : " + tileBase.name;
+                }
+                Debug.LogWarning(alertStr);
+                _domain.Clear();
+                return false;
+
+            }
+            else
+            {
+                bool changed = _domain.Count != newDomain.Count;
+                _domain = new List<TileBase>(newDomain);
+                return changed;
             }
 
-            bool changed = _domain.Count != newDomain.Count;
-            
-            _domain = new List<TileBase>(newDomain);
-            _entropy = _domain.Count - 1;
-
-            return changed;
-
         }
-        
+
     }
 }

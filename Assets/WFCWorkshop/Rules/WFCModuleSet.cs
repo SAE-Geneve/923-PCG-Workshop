@@ -15,86 +15,104 @@ namespace WFCWorkshop
     public class WFCModuleSet : ScriptableObject
     {
         public List<WFCModule> Modules;
-
-        List<TileBase> _tileset = new List<TileBase>();
-
-        // Static method
-
-        public void SetModule(TileBase tile, TileBase neighbour)
+        
+        private List<TileBase> _tileSet = new List<TileBase>();
+        
+        public static Vector3Int[] Directions =
         {
-            string _rulesPath = Path.GetDirectoryName(AssetDatabase.GetAssetPath(this));
-            //string rulesPathFilled = CreateSelfFolder(_rulesPath + Path.PathSeparator);
-
-            if (AssetDatabase.IsValidFolder(_rulesPath))
-            {
-                Debug.Log("Creating tile module for " + tile.name + " and neighbour " + neighbour.name);
-
-                if (Modules == null || Modules.Count <= 0)
-                {
-                    Debug.Log("Reset List !");
-                    Modules = new List<WFCModule>();
-                }
-
-                WFCModule module = Modules.FirstOrDefault(m => m.Tile == tile);
-                if (module == null)
-                {
-                    Debug.Log("Creating new module");
-                    module = CreateInstance<WFCModule>();
-                    module.Neighbours = new List<TileBase>();
-                    module.Neighbours.Add(tile);
-                    Modules.Add(module);
-
-                    AssetDatabase.CreateAsset(module, _rulesPath + "/" + tile.name + "_gen.asset");
-                }
-
-                module.Tile = tile;
-                module.Neighbours.Add(neighbour);
-                
-                AssetDatabase.SaveAssets();
-                
-            }
-            else
-            {
-                Debug.LogError("Error creating folder");
-            }
-            
-
+            Vector3Int.up,
+            Vector3Int.right,
+            Vector3Int.down,
+            Vector3Int.left
+        };
+        
+        public void ResetTileSet()
+        {
+            _tileSet.Clear();
         }
 
-        public void ResetTileset()
-        {
-            _tileset.Clear();
-        }
-
-        public List<TileBase> Tileset
+        public List<TileBase> TileSet
         {
             get
             {
-                if (_tileset == null || _tileset.Count <= 0)
+                if (_tileSet == null || _tileSet.Count <= 0)
                 {
                     foreach (WFCModule module in Modules)
                     {
-                        _tileset.Add(module.Tile);
+                        _tileSet.Add(module.RootTile);
                     }
                 }
 
-                return _tileset;
+                return _tileSet;
             }
         }
 
-        public List<TileBase> PossibleTiles(List<TileBase> propagatedSlotDomain)
+        public List<TileBase> PossibleTiles(WFCSlot slot, Vector3Int direction)
         {
-
-            var filteredModules = Modules.Where(m => propagatedSlotDomain.Contains(m.Tile));
-
+            // Result
             HashSet<TileBase> tiles = new HashSet<TileBase>();
+            
+            // All modules corresponding to the root tile
+            var filteredModules = Modules.Where(m => slot.Domain.Contains(m.RootTile));
+            
             foreach (WFCModule wfcModule in filteredModules)
             {
-                tiles.AddRange(wfcModule.Neighbours);
+                // All "rules" corresponding to a direction
+                List<WFCModule.NeighbourRule> rules = wfcModule.NeighbourRules.Where(r => r.Direction == direction).ToList();
+                
+                foreach (WFCModule.NeighbourRule rule in rules)
+                {
+                    tiles.AddRange(rule.NeighbourTiles);
+                }
             }
 
             return tiles.ToList();
 
         }
+
+        public void Clear()
+        {
+            foreach (WFCModule wfcModule in Modules)
+            {
+                AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(wfcModule));
+            }
+            Modules.Clear();
+            
+        }
+        
+        public void AddModuleNeighbour(TileBase rootTile, TileBase neighbourTile, Vector3Int direction)
+        {
+            Debug.Log("Root module tile : " + rootTile.name + " : " + neighbourTile.name);
+
+            string modulePath = Path.GetDirectoryName(AssetDatabase.GetAssetPath(this));
+            if(modulePath != "")
+            {
+                WFCModule newModule = Modules.FirstOrDefault(m => m.RootTile == rootTile);
+                if (newModule == null)
+                {
+                    // Create a fresh new asset corresponding to the root tile
+                    newModule = CreateInstance<WFCModule>();
+                    AssetDatabase.CreateAsset(newModule, modulePath + "/" + rootTile.name + ".asset");
+                    Modules.Add(newModule);
+                    
+                    // Set the root tile
+                    newModule.RootTile = rootTile;
+                    newModule.NeighbourRules = new List<WFCModule.NeighbourRule>();
+                    //newModule.AddNeighbour(rootTile, direction);
+                }
+                
+                // add a neighbour if it does not exists already
+                if(!newModule.NeighbourRules.Exists(r => r.NeighbourTiles.Contains(neighbourTile) && r.Direction == direction))
+                {
+                    newModule.AddNeighbour(neighbourTile, direction);
+                }
+                
+                
+                AssetDatabase.SaveAssets();
+                
+            }
+            
+        }
+        
     }
 }
